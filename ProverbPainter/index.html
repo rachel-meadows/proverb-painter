@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Proverb Painter</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<div class="topContainer">
+    <h1>Proverb Painter</h1>
+    <h2>A picture is worth a thousand words...</h2>
+</div>
+<div class="bottomContainer">
+    <div class="leftContainer">
+        <div class="horizontalFlex">
+            <div class="avatar">
+                <button class="regenerateAvatar" onclick="ChangeAvatar()">
+                    ⟳
+                </button>
+            </div>
+            <form id="enterLobby">
+                <input type="text" id="nickname" name="nickname" placeholder="Nickname">
+            </div>
+            <button class="startButton">Start</button>
+        </form>
+    </div>
+    <div class="rightContainer">
+        <p>Start a game and try to figure out what proverb is on display. You get points 
+            for guessing right, making a drawing that other people guess, and coming up with funny 
+            guesses!</p>
+    </div>
+</div>
+<script src="Scripts/Program.js"></script>
+<script src="Scripts/ChangeAvatar.js"></script>
+</body>
+</html>
