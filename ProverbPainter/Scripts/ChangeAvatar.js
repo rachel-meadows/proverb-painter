@@ -1,4 +1,4 @@
-function ChangeAvatar() {
+export function ChangeAvatar() {
   const avatar = document.querySelector('.avatar');
 
   const avatars = [
@@ -13,5 +13,6 @@ function ChangeAvatar() {
   const randomIndex = Math.floor(Math.random() * avatars.length);
   const randomImage = avatars[randomIndex];
 
-  avatar.style.backgroundImage = `url('${randomImage}')`;
+  localStorage.setItem('avatar', randomImage);
+  avatar.style.backgroundImage = `url('../${randomImage}')`;
 }

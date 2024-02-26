@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Proverb Painter</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
@@ -16,14 +16,14 @@
     <div class="leftContainer">
         <div class="horizontalFlex">
             <div class="avatar">
-                <button class="regenerateAvatar" onclick="ChangeAvatar()">
+                <button class="regenerateAvatar"">
                     ⟳
                 </button>
             </div>
             <form id="enterLobby">
                 <input type="text" id="nickname" name="nickname" placeholder="Nickname">
             </div>
-            <button class="startButton">Start</button>
+            <button class="startButton" type="button">Start</button>
         </form>
     </div>
     <div class="rightContainer">
@@ -32,7 +32,7 @@
             guesses!</p>
     </div>
 </div>
-<script src="Scripts/Program.js"></script>
-<script src="Scripts/ChangeAvatar.js"></script>
+<script src="../Scripts/Program.js" type="module"></script>
+<script src="../Scripts/ChangeAvatar.js" type="module"></script>
 </body>
 </html>
