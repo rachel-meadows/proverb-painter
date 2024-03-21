@@ -1,6 +1,15 @@
 import { ChangeAvatar } from './ChangeAvatar.js';
 
 function main() {
+  document
+    .getElementById('nickname')
+    .addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        EnterLobby();
+      }
+    });
+
   ChangeAvatar();
 
   var regenerateAvatarButton = document.querySelector('.regenerateAvatar');
@@ -19,18 +28,5 @@ function EnterLobby() {
   localStorage.setItem('nickname', nickname);
   window.location.href = 'lobby.html';
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  var avatar = localStorage.getItem('avatar');
-  var nickname = localStorage.getItem('nickname');
-
-  var lobbyTestDisplay = document.getElementById('displayData');
-
-  if (lobbyTestDisplay && nickname) {
-    lobbyTestDisplay.textContent = nickname;
-  } else {
-    lobbyTestDisplay.textContent = 'No data found in local storage.';
-  }
-});
 
 document.addEventListener('DOMContentLoaded', main);
