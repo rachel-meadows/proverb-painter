@@ -1,0 +1,16 @@
+.lobbyContainer {
+    display: flex;
+    padding: 5%;
+    height: 100vh;
+}
+
+.playersList {
+    height: 100%;
+    width: 30%;
+    border: black 3px;
+    background-color: red;
+}
+
+.lobbyButtons {
+    
+}

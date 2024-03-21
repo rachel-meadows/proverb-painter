@@ -1,5 +1,5 @@
 function main() {
-  var avatar = localStorage.getItem('avatar');
+  var avatarImg = localStorage.getItem('avatar');
   var nickname = localStorage.getItem('nickname');
 
   var lobbyTestDisplay = document.getElementById('displayData');
@@ -10,8 +10,8 @@ function main() {
     lobbyTestDisplay.textContent = 'No data found in local storage.';
   }
 
-  console.log('avatar', avatar);
-  avatar.style.backgroundImage = `url('../${randomImage}')`;
+  const avatar = document.querySelector('.avatar');
+  avatar.style.backgroundImage = `url('../${avatarImg}')`;
 }
 
 document.addEventListener('DOMContentLoaded', main);

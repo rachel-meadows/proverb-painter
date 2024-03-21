@@ -93,3 +93,7 @@ button {
     padding: 10px 40px;
     border-radius: 4px;
 }
+
+.centreText {
+    text-align: center;
+}

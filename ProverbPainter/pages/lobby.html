@@ -5,15 +5,23 @@
     <meta charset="utf-8" />
     <title>Proverb Painter</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./lobby.css" />
 </head>
 
 <body>
-    <div>
-        <h1>Lobby (todo)</h1>
-        <div class="avatar">
+    <div class="lobbyContainer">
+        <div class="playersList">
+            <h1 class="centreText">Players: 0 / 6</h1>
+            <div class="horizontalFlex">
+                <div class="avatar">
+                </div>
+                <div id="displayData"></div>
+            </div>
         </div>
-        <div id="displayData"></div>
-
+        <div class="lobbyButtons">
+            Invite
+            <button>Start</button>
+        </div>
     </div>
     <script src="../Scripts/Lobby.js" type="module"></script>
 </body>
