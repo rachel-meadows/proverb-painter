@@ -12,6 +12,15 @@ function main() {
 
   const avatar = document.querySelector('.avatar');
   avatar.style.backgroundImage = `url('../${avatarImg}')`;
+
+  var gameButton = document.querySelector('.startButton');
+  if (gameButton) {
+    gameButton.addEventListener('click', EnterGame);
+  }
+}
+
+function EnterGame() {
+  window.location.href = 'game.html';
 }
 
 document.addEventListener('DOMContentLoaded', main);
