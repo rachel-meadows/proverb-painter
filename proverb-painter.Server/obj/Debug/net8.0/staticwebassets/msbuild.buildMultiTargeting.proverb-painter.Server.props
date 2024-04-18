@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\proverb-painter.Server.props" />
+</Project>
