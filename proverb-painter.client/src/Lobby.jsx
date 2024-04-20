@@ -19,10 +19,10 @@ function Lobby() {
 
     const urlFieldRef = useRef(null);
 
-    const copyToClipboard = () => {
-        urlFieldRef.current.select();
+    const copyToClipboard = (e) => {
+        const inputElement = e.target.parentNode.previousSibling;
+        inputElement.select();
         document.execCommand("copy");
-        alert("Copied the URL: " + urlFieldRef.current.value);
     };
 
     return (
@@ -39,16 +39,18 @@ function Lobby() {
                 <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                     <input
                         type="text"
+                        id="inviteLink"
                         className="url-field"
                         value="https://example.com"
                         ref={urlFieldRef}
                         readOnly
                     />
-                    <i
-                        className="fas fa-copy copy-icon"
-                        style={{ position: 'absolute', right: '10px', cursor: 'pointer' }}
+                    <span
+                        id="inviteLink"
                         onClick={copyToClipboard}
-                    ></i>
+                        className="outerCopyIcon">
+                        📄<span className="innerCopyIcon">📄</span>
+                    </span>
                 </div>
                 <br/>
                 <button className="startButton" type="submit">Start game</button>

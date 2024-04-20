@@ -62,3 +62,21 @@ h1 {
     display: flex;
     gap: 10%;
 }
+
+.outerCopyIcon {
+    font-size: .875em;
+    margin-right: .125em;
+    position: relative;
+    top: -.25em;
+    left: -.125em
+}
+
+.innerCopyIcon {
+    position: absolute;
+    top: .25em;
+    left: .25em;
+}
+
+.outerCopyIcon, .innerCopyIcon {
+    cursor: pointer;
+}
