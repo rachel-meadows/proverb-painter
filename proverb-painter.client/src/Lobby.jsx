@@ -31,7 +31,7 @@ function Lobby() {
                 <h1 className="centreText">Players: 0 / 6</h1>
                 <div className="horizontalFlex">
                     <div className="avatar smallAvatar"></div>
-                    <div id="displayData">{userName}</div>
+                    <p className="displayData">{userName}</p>
                 </div>
             </div>
             <form className="lobbyButtons" onSubmit={EnterGame}>
