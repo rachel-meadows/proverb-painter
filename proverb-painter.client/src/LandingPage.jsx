@@ -61,12 +61,12 @@ function ChangeAvatar() {
     const avatar = document.querySelector('.avatar');
 
     const avatars = [
-        'public/avatars/Avatar1.jpeg',
-        'public/avatars/Avatar2.jpeg',
-        'public/avatars/Avatar3.jpeg',
-        'public/avatars/Avatar4.jpeg',
-        'public/avatars/Avatar5.jpeg',
-        'public/avatars/Avatar6.jpeg',
+        '/avatars/Avatar1.jpeg',
+        '/avatars/Avatar2.jpeg',
+        '/avatars/Avatar3.jpeg',
+        '/avatars/Avatar4.jpeg',
+        '/avatars/Avatar5.jpeg',
+        '/avatars/Avatar6.jpeg',
     ];
 
     const randomIndex = Math.floor(Math.random() * avatars.length);

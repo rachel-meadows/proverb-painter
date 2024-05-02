@@ -45,7 +45,7 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    background-image: url('public/avatars/Avatar1.jpeg');
+    background-image: url('/avatars/Avatar1.jpeg');
     background-size: cover;
     background-position: center;
     background-color: gray;
