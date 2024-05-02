@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("proverb-painter.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+215d6ec5d18ad76a003711992af996b00f1fd6b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d356ec876499892f0aa10462c9183512995a172a")]
 [assembly: System.Reflection.AssemblyProductAttribute("proverb-painter.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("proverb-painter.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
