@@ -1,3 +1,11 @@
 Wireframe.excalidraw
 .github
 .vs/
+proverb-painter.Server/obj
+proverb-painter.Server/obj/*
+proverb-painter.Debug/obj
+proverb-painter.Debug/obj/*
+proverb-painter.Release/obj
+proverb-painter.Release/obj/*
+proverb-painter.Server/bin
+proverb-painter.Server/bin/*
