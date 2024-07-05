@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\proverb-painter.Server.props" />
-</Project>
