@@ -9,3 +9,5 @@ proverb-painter.Release/obj
 proverb-painter.Release/obj/*
 proverb-painter.Server/bin
 proverb-painter.Server/bin/*
+proverb-painter.Server/obj/proverb-painter.Server.csproj.nuget.dgspec.json
+proverb-painter.Server/obj/proverb-painter.Server.csproj.nuget.g.props
