@@ -1,10 +1,15 @@
+.canvasPlacement {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+}
+
 .gameContainer {
     display: flex;
-    height: 100vh;
-    width: 100vw;
     flex-direction: column;
-    padding: 10%;
+    padding: 2%;
     align-items: center;
+    width: 100vw;
 }
 
 canvas {
