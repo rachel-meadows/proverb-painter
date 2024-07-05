@@ -1,6 +1,11 @@
+@proverb-painter.Server_HostAddress = http://localhost:5025
 @proverb_painter.Server_HostAddress = http://localhost:5025
 
 GET {{proverb_painter.Server_HostAddress}}/weatherforecast/
 Accept: application/json
+
+###
+
+GET {{proverb-painter.Server_HostAddress}}/weatherforecast
 
 ###
