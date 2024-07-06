@@ -12,4 +12,4 @@ proverb-painter.Server/bin/*
 proverb-painter.Server/obj
 proverb-painter.Server/obj/*
 proverb-painter.Server/migrations/*
-AllProverbs.csv
+proverb-painter.Server/allProverbs.csv

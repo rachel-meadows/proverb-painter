@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CsvHelper;
+using Microsoft.EntityFrameworkCore;
 using proverb_painter.Server.Entities;
+using System.Formats.Asn1;
+using System.Globalization;
 
 namespace proverb_painter.Server.Data
 {
@@ -12,12 +15,19 @@ namespace proverb_painter.Server.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Proverb>().HasData(
-                new Proverb { Id = 1, ProverbText = "It's always darkest before dawn"},
-                new Proverb { Id = 2, ProverbText = "A stitch in time saves nine"}
-            );
+            var proverbs = LoadProverbsFromCsv();
+            modelBuilder.Entity<Proverb>().HasData(proverbs);
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        private List<Proverb> LoadProverbsFromCsv()
+        {
+            using (var reader = new StreamReader("proverbs.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                return new List<Proverb>(csv.GetRecords<Proverb>());
+            }
         }
 
         public DbSet<Player> Players { get; set; }
