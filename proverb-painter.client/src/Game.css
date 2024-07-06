@@ -1,15 +1,23 @@
-.canvasPlacement {
+.pageContainer {
     display: flex;
-    align-items: center;
-    width: 100vw;
+    flex-direction: row;
 }
 
-.gameContainer {
+.column {
+    flex: 1;
+    border: 2px solid red;
+    padding: 10px;
+}
+
+.centreThird {
+    display: flex;
+    align-items: center;
+}
+
+.canvasPlacement {
     display: flex;
     flex-direction: column;
-    padding: 2%;
     align-items: center;
-    width: 100vw;
 }
 
 canvas {

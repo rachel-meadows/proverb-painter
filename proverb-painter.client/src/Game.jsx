@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './Common.css';
 import './Game.css';
 
@@ -69,16 +69,26 @@ function Game() {
   }, [context, isMouseDown, lastMousePosition, toolType]);
 
   return (
-    <div class="canvasPlacement">
-      <div class="gameContainer">
-        <canvas id="canvas" ref={canvasRef} width="800" height="500"></canvas>
-        <input type="button" value="draw" onClick={() => setToolType('draw')} />
-        <input
-          type="button"
-          value="erase"
-          onClick={() => setToolType('erase')}
-        />
+    <div className="pageContainer">
+      <div className="column leftThird"></div>
+      <div className="column centreThird">
+        <div className="canvasPlacement">
+          <canvas id="canvas" ref={canvasRef} width="800" height="500"></canvas>
+          <div className="horizontalFlex">
+            <input
+              type="button"
+              value="draw"
+              onClick={() => setToolType('draw')}
+            />
+            <input
+              type="button"
+              value="erase"
+              onClick={() => setToolType('erase')}
+            />
+          </div>
+        </div>
       </div>
+      <div className="column rightThird"></div>
     </div>
   );
 }
