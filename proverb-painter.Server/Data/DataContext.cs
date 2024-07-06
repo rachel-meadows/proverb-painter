@@ -11,5 +11,8 @@ namespace proverb_painter.Server.Data
         }
 
         public DbSet<Player> Players { get; set; }
+        public DbSet<Guess> Guesses { get; set; }
+        public DbSet<Proverb> Proverbs { get; set; }
+        public DbSet<Room> Rooms { get; set; }
     }
 }
