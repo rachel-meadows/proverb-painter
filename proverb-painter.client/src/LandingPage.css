@@ -1,11 +1,11 @@
-.pageContainer {
+.landingPage-pageContainer {
     height: 100vh;
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(#d4ebff, #9dffda);
 }
 
-.topContainer {
+.landingPage-topContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,13 +13,13 @@
     justify-content: center;
 }
 
-.bottomContainer {
+.landingPage-bottomContainer {
     display: flex;
     height: 20vh;
     gap: 50px;
 }
 
-.leftContainer {
+.landingPage-leftContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,7 @@
     padding: 0% 0% 0% 20%;
 }
 
-.rightContainer {
+.landingPage-rightContainer {
     display: flex;
     align-items: center;
     flex-grow: 1;
@@ -36,23 +36,12 @@
     padding: 0% 20% 0% 0%;
 }
 
-    .rightContainer p {
-        padding: 0% 15% 0% 0%;
-        font-size: 120%;
-    }
-
-.avatar {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    background-image: url('/avatars/Avatar1.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-color: gray;
-    position: relative;
+.landingPage-rightContainer p {
+    padding: 0% 15% 0% 0%;
+    font-size: 120%;
 }
 
-.regenerateAvatar {
+.landingPage-regenerateAvatar {
     width: 10%;
     height: 10%;
     border-radius: 50%;
@@ -65,7 +54,7 @@
     font-size: 100%;
 }
 
-#enterLobby {
+#landingPage-enterLobby {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -73,18 +62,7 @@
     margin-left: 20px;
 }
 
-#enterLobby input {
+#landingPage-enterLobby input {
     padding: 10px;
     border: none;
-}
-
-.startButton {
-    background-color: #0fd20f;
-    max-width: 70%;
-}
-
-.startButton {
-    border: none;
-    padding: 10px 40px;
-    border-radius: 4px;
 }

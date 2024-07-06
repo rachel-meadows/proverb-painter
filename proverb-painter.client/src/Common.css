@@ -68,9 +68,28 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
-.horizontalFlex {
+.common-horizontalFlex {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 2%;
+}
+
+.common-avatar {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-image: url('/avatars/Avatar1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-color: gray;
+    position: relative;
+}
+
+.common-startButton {
+    border: none;
+    padding: 10px 40px;
+    border-radius: 4px;
+    background-color: #0fd20f;
+    max-width: 70%;
 }

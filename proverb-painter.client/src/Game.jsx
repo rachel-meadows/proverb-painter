@@ -86,25 +86,30 @@ function Game() {
   };
 
   return (
-    <div className="pageContainer">
-      <div className="column leftThird">
-        <div className="timer">51:03</div>
-        <div className="playersList">
+    <div className="game-pageContainer">
+      <div className="game-column game-leftThird">
+        <div className="game-timer">51:03</div>
+        <div className="game-playersList">
           <h1 className="centreText">Players:</h1>
-          <div className="horizontalFlex">
-            <div className="avatar smallAvatar"></div>
+          <div className="common-horizontalFlex">
+            <div className="common-avatar smallAvatar"></div>
             <p className="displayData">Bob</p>
           </div>
-          <div className="horizontalFlex">
-            <div className="avatar smallAvatar"></div>
+          <div className="common-horizontalFlex">
+            <div className="common-avatar smallAvatar"></div>
             <p className="displayData">Alice</p>
           </div>
         </div>
       </div>
-      <div className="column centreThird">
-        <div className="canvasPlacement">
-          <canvas id="canvas" ref={canvasRef} width="800" height="500"></canvas>
-          <div className="horizontalFlex">
+      <div className="game-column game-centreThird">
+        <div className="game-canvasPlacement">
+          <canvas
+            className="game-canvas"
+            ref={canvasRef}
+            width="800"
+            height="500"
+          ></canvas>
+          <div className="common-horizontalFlex">
             <input
               type="button"
               value="draw"
@@ -118,14 +123,14 @@ function Game() {
           </div>
         </div>
       </div>
-      <div className="column rightThird">
-        <div className="guessContainer">
-          <div className="guessBox">
+      <div className="game-column game-rightThird">
+        <div className="game-guessContainer">
+          <div className="game-guessBox">
             {guesses.map((guess, index) => (
-              <div key={index} className="guess">
+              <div key={index} className="game-guess">
                 <p>{guess.text}</p>
                 <button
-                  className={`likeButton ${guess.liked ? 'liked' : ''}`}
+                  className={`game-likeButton ${guess.liked ? 'liked' : ''}`}
                   onClick={() => handleLikeGuess(index)}
                 >
                   {guess.liked ? '❤️' : '♡'}
@@ -133,7 +138,7 @@ function Game() {
               </div>
             ))}
           </div>
-          <div className="guessInput">
+          <div className="game-guessInput">
             <input
               type="text"
               value={newGuess}

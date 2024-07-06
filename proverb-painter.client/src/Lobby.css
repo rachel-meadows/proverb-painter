@@ -58,11 +58,6 @@ h1 {
     cursor: pointer;
 }
 
-.horizontalFlex {
-    display: flex;
-    gap: 10%;
-}
-
 .outerCopyIcon {
     font-size: .875em;
     margin-right: .125em;

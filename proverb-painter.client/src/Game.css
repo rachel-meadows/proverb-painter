@@ -1,32 +1,32 @@
-.pageContainer {
+.game-pageContainer {
     display: flex;
     flex-direction: row;
 }
 
-.column {
+.game-column {
     flex: 1;
     border: 2px solid red;
     padding: 10px;
 }
 
-.centreThird {
+.game-centreThird {
     display: flex;
     align-items: center;
 }
 
-.canvasPlacement {
+.game-canvasPlacement {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-canvas {
+.game-canvas {
     cursor: crosshair;
     border: 1px solid #000000;
     background-color: rgba(255, 255, 255, 0.895);
 }
 
-.playersList {
+.game-playersList {
     border: black 3px;
     background-color: black;
     padding: 3%;
@@ -38,7 +38,7 @@ canvas {
     width: 100%;
 }
 
-.guessContainer {
+.game-guessContainer {
     max-width: 600px;
     height: 70%;
     border: 1px solid #ccc;
@@ -49,20 +49,20 @@ canvas {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.guessBox {
+.game-guessBox {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
     border-bottom: 1px solid #ccc;
 }
 
-.guessInput {
+.game-guessInput {
     display: flex;
     padding: 10px;
     border-top: 1px solid #ccc;
 }
 
-.guessInput input {
+.game-guessInput input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
@@ -70,7 +70,7 @@ canvas {
     margin-right: 10px;
 }
 
-.guessInput button {
+.game-guessInput button {
     padding: 10px 20px;
     border: none;
     background-color: #007bff;
@@ -80,11 +80,11 @@ canvas {
     font-size: 16px;
 }
 
-.guessInput button:hover {
+.game-guessInput button:hover {
     background-color: #0056b3;
 }
 
-.guess {
+.game-guess {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,24 +92,24 @@ canvas {
     border-bottom: 1px solid #eee;
 }
 
-.guess p {
+.game-guess p {
     margin: 0;
     font-size: 16px;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
-.likeButton {
+.game-likeButton {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 20px;
 }
 
-.likeButton:focus {
+.game-likeButton:focus {
     outline: none;
 }
 
-.liked {
+.game-liked {
     color: red;
 }
