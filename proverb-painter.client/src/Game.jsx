@@ -68,9 +68,39 @@ function Game() {
     };
   }, [context, isMouseDown, lastMousePosition, toolType]);
 
+  const [guesses, setGuesses] = useState([]);
+  const [newGuess, setNewGuess] = useState('');
+
+  const handleSendGuess = () => {
+    if (newGuess.trim() !== '') {
+      setGuesses([...guesses, { text: newGuess, liked: false }]);
+      setNewGuess('');
+    }
+  };
+
+  const handleLikeGuess = (index) => {
+    const updatedGuesses = guesses.map((guess, i) =>
+      i === index ? { ...guess, liked: !guess.liked } : guess
+    );
+    setGuesses(updatedGuesses);
+  };
+
   return (
     <div className="pageContainer">
-      <div className="column leftThird"></div>
+      <div className="column leftThird">
+        <div className="timer">51:03</div>
+        <div className="playersList">
+          <h1 className="centreText">Players:</h1>
+          <div className="horizontalFlex">
+            <div className="avatar smallAvatar"></div>
+            <p className="displayData">Bob</p>
+          </div>
+          <div className="horizontalFlex">
+            <div className="avatar smallAvatar"></div>
+            <p className="displayData">Alice</p>
+          </div>
+        </div>
+      </div>
       <div className="column centreThird">
         <div className="canvasPlacement">
           <canvas id="canvas" ref={canvasRef} width="800" height="500"></canvas>
@@ -88,7 +118,32 @@ function Game() {
           </div>
         </div>
       </div>
-      <div className="column rightThird"></div>
+      <div className="column rightThird">
+        <div className="guessContainer">
+          <div className="guessBox">
+            {guesses.map((guess, index) => (
+              <div key={index} className="guess">
+                <p>{guess.text}</p>
+                <button
+                  className={`likeButton ${guess.liked ? 'liked' : ''}`}
+                  onClick={() => handleLikeGuess(index)}
+                >
+                  {guess.liked ? '❤️' : '♡'}
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="guessInput">
+            <input
+              type="text"
+              value={newGuess}
+              onChange={(e) => setNewGuess(e.target.value)}
+              placeholder="Type a guess"
+            />
+            <button onClick={handleSendGuess}>Send</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

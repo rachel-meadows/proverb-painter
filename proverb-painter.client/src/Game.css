@@ -25,3 +25,91 @@ canvas {
     border: 1px solid #000000;
     background-color: rgba(255, 255, 255, 0.895);
 }
+
+.playersList {
+    border: black 3px;
+    background-color: black;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    color: white;
+    height: auto;
+    width: 100%;
+}
+
+.guessContainer {
+    max-width: 600px;
+    height: 70%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.guessBox {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.guessInput {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.guessInput input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.guessInput button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.guessInput button:hover {
+    background-color: #0056b3;
+}
+
+.guess {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.guess p {
+    margin: 0;
+    font-size: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.likeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.likeButton:focus {
+    outline: none;
+}
+
+.liked {
+    color: red;
+}
