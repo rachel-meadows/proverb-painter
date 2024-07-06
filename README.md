@@ -5,3 +5,4 @@
 
 # Notes for future me:
 ORM is entity framework core with code-first migrations.
+Run Update-Database in Package Manager Console while sorting out data flows.
