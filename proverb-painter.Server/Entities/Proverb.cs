@@ -2,6 +2,7 @@
 {
     public class Proverb
     {
-        public required int Id { get; set; }
+        public int Id { get; set; }
+        public required string ProverbText { get; set; }
     }
 }
