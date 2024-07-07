@@ -93,21 +93,25 @@ function Game() {
           <h1 className="centreText">Players:</h1>
           <div className="common-horizontalFlex">
             <div className="common-avatar smallAvatar"></div>
-            <p className="displayData">Bob</p>
+            <p className="displayData">Bob (450)</p>
           </div>
           <div className="common-horizontalFlex">
             <div className="common-avatar smallAvatar"></div>
-            <p className="displayData">Alice</p>
+            <p className="displayData">Alice (600)</p>
           </div>
         </div>
       </div>
       <div className="game-column game-centreThird">
+        <div className="game-proverbContainer">
+          <p>Your proverb is:</p>
+          It is always darkest before the dawn.
+        </div>
         <div className="game-canvasPlacement">
           <canvas
             className="game-canvas"
             ref={canvasRef}
-            width="800"
-            height="500"
+            width="600"
+            height="400"
           ></canvas>
           <div className="common-horizontalFlex">
             <input

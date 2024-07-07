@@ -12,6 +12,15 @@
 .game-centreThird {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.game-proverbContainer {
+    background-color: rgb(189, 189, 189);
+    padding: 10px 30px;
+    border-radius: 5px;
 }
 
 .game-canvasPlacement {
