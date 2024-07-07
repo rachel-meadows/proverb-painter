@@ -102,10 +102,6 @@ function Game() {
         </div>
       </div>
       <div className="game-column game-centreThird">
-        <div className="game-proverbContainer">
-          <p>Your proverb is:</p>
-          It is always darkest before the dawn.
-        </div>
         <div className="game-canvasPlacement">
           <canvas
             className="game-canvas"
@@ -125,6 +121,10 @@ function Game() {
               onClick={() => setToolType('erase')}
             />
           </div>
+        </div>
+        <div className="game-proverbContainer">
+          <p>Your proverb is:</p>
+          It is always darkest before the dawn.
         </div>
       </div>
       <div className="game-column game-rightThird">
