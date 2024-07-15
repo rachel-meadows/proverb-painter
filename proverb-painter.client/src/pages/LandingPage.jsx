@@ -1,9 +1,24 @@
-﻿import { useNavigate } from 'react-router-dom';
+﻿import { ping } from '../services/healthcheckService';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import '../assets/Common.css';
 import '../assets/LandingPage.css';
 
 function App() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkHealth = async () => {
+      try {
+        const healthcheck = await ping();
+        console.log('Healthcheck passed: ', healthcheck);
+      } catch (error) {
+        console.error('Error reaching backend:', error);
+      }
+    };
+
+    checkHealth();
+  }, []);
 
   const EnterLobby = (e) => {
     e.preventDefault();
@@ -79,7 +94,7 @@ function ChangeAvatar() {
   const randomImage = avatars[randomIndex];
 
   localStorage.setItem('avatar', randomImage);
-  avatar.style.backgroundImage = `url('${randomImage}')`;
+  if (avatar) avatar.style.backgroundImage = `url('${randomImage}')`;
 }
 
 document.addEventListener('DOMContentLoaded', main);

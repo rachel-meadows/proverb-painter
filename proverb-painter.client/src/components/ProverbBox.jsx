@@ -7,8 +7,8 @@ const ProverbBox = () => {
   useEffect(() => {
     const fetchProverb = async () => {
       try {
-          const data = await getRandomProverb();
-        console.log('dataaa', data)
+        const data = await getRandomProverb();
+        console.log('data', data);
         setProverb(data);
       } catch (error) {
         console.error('Error fetching proverb:', error);
