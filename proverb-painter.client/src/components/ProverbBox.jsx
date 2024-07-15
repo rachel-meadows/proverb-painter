@@ -20,7 +20,7 @@ const ProverbBox = () => {
 
   return (
     <div className="proverb-box">
-      {proverb ? <p>{proverb.text}</p> : <p>Loading...</p>}
+      {proverb ? <p>{proverb.proverbText}</p> : <p>Loading...</p>}
     </div>
   );
 };

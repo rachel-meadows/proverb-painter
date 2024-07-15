@@ -9,10 +9,8 @@ export const getAllProverbs = async () => {
 };
 
 export const getRandomProverb = async () => {
-  const allProverbs = await fetch(`${API_URL}/GetAllProverbs`);
-    console.log('allProverbs', allProverbs);
-    var response = allProverbs[0];
-    console.log('response', response);
+    const response = await fetch(`${API_URL}/GetRandomProverb`);
+    console.log('proverb', response);
 
   if (!response.ok) {
     throw new Error(`Network response status was ${response.status}`);
