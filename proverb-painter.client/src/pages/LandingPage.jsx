@@ -10,10 +10,9 @@ function App() {
   useEffect(() => {
     const checkHealth = async () => {
       try {
-        const healthcheck = await ping();
-        console.log('Healthcheck passed: ', healthcheck);
+        await ping();
       } catch (error) {
-        console.error('Error reaching backend:', error);
+        console.error('Error reaching backend API.');
       }
     };
 

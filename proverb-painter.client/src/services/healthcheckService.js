@@ -1,9 +1,10 @@
-const API_URL = 'https://localhost:5025/api';
+const API_URL = 'http://localhost:5025/api/healthcheck';
 
 export const ping = async () => {
-  const response = await fetch(`${API_URL}/ping`);
-  if (!response.ok) {
-    throw new Error(`Network response status was ${response.status}`);
-  }
-  return response.json();
+    const pingResponse = await fetch(`${API_URL}/ping`);
+    if (!pingResponse.ok) {
+        throw new Error(`Network response status was ${pingResponse.status}`);
+    }
+
+    return pingResponse.response;
 };

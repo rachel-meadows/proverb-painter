@@ -17,7 +17,7 @@ namespace proverb_painter.Server.Controllers
         }
 
         [HttpGet("ping")]
-        public async Task<ActionResult<string>> PingBackend()
+        public ActionResult<string> PingBackend()
         {
             return Ok("pong");
         }

@@ -15,6 +15,17 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:5173")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 app.UseDefaultFiles();
@@ -25,6 +36,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.UseCors("AllowSpecificOrigin");
 }
 
 app.UseHttpsRedirection();
