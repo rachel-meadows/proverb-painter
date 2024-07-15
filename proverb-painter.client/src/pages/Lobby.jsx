@@ -1,7 +1,7 @@
 ﻿import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Common.css';
-import './Lobby.css';
+import '../assets/Common.css';
+import '../assets/Lobby.css';
 
 function Lobby() {
   const navigate = useNavigate();

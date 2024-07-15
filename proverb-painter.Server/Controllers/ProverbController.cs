@@ -18,11 +18,27 @@ namespace proverb_painter.Server.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllProverbs")]
         public async Task<ActionResult<List<Proverb>>> GetAllProverbs()
         {
             var proverbs = await _context.Proverbs.ToListAsync();
             return Ok(proverbs);
+        }
+
+        [HttpGet("GetRandomProverb")]
+        public async Task<ActionResult<Proverb>> GetRandomProverb()
+        {
+            // New GUID --> LINQ random ordering
+            var proverb = await _context.Proverbs
+                .OrderBy(p => Guid.NewGuid())
+                .FirstOrDefaultAsync();
+
+            if (proverb == null)
+            {
+                return NotFound();
+            }
+
+            return proverb;
         }
     }
 }

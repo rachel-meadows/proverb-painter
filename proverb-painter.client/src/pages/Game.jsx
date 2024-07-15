@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
-import './Common.css';
-import './Game.css';
+import ProverbBox from '../components/ProverbBox';
+import '../assets/Common.css';
+import '../assets/Game.css';
 
 function Game() {
   const canvasRef = useRef(null);
@@ -8,6 +9,8 @@ function Game() {
   const [lastMousePosition, setLastMousePos] = useState({ x: 0, y: 0 });
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [toolType, setToolType] = useState('draw');
+  const [guesses, setGuesses] = useState([]);
+  const [newGuess, setNewGuess] = useState('');
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -68,9 +71,6 @@ function Game() {
     };
   }, [context, isMouseDown, lastMousePosition, toolType]);
 
-  const [guesses, setGuesses] = useState([]);
-  const [newGuess, setNewGuess] = useState('');
-
   const handleSendGuess = () => {
     if (newGuess.trim() !== '') {
       setGuesses([...guesses, { text: newGuess, liked: false }]);
@@ -124,7 +124,7 @@ function Game() {
         </div>
         <div className="game-proverbContainer">
           <p>Your proverb is:</p>
-          It is always darkest before the dawn.
+          <ProverbBox />
         </div>
       </div>
       <div className="game-column game-rightThird">
