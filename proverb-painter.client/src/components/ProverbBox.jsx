@@ -8,7 +8,6 @@ const ProverbBox = () => {
     const fetchProverb = async () => {
       try {
         const data = await getRandomProverb();
-        console.log('data', data);
         setProverb(data);
       } catch (error) {
         console.error('Error fetching proverb:', error);

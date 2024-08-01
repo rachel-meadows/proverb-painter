@@ -17,7 +17,7 @@ namespace proverb_painter.Server.Controllers
             _context = context;
         }
 
-        [HttpGet("id")]
+        [HttpGet]
         public async Task<ActionResult<List<Player>>> GetPlayer(int id)
         {
             var player = await _context.Players.FindAsync(id);
@@ -28,8 +28,8 @@ namespace proverb_painter.Server.Controllers
             return Ok(player);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<List<Player>>> CreatePlayer(Player player)
+        [HttpPost("CreatePlayer")]
+        public async Task<ActionResult<List<Player>>> CreatePlayer([FromBody] Player player)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace proverb_painter.Server.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("DeletePlayer")]
         public async Task<ActionResult<List<Player>>> DeletePlayer(int id)
         {
             try

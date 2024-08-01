@@ -2,20 +2,24 @@
 import { useNavigate } from 'react-router-dom';
 import '../assets/Common.css';
 import '../assets/Lobby.css';
+import { addPlayer } from '../services/playerService';
 
 function Lobby() {
   const navigate = useNavigate();
 
   const userName = useState(localStorage.getItem('nickname') || 'Loading...');
   const avatarImg = useState(localStorage.getItem('avatar') || '');
+  const roomId = "1"; // Todo
+  const isAdmin = true; // Todo
 
   const avatar = document.querySelector('.common-avatar');
   avatar.style.backgroundImage = `url('../${avatarImg}')`;
 
-  const EnterGame = (e) => {
-    e.preventDefault();
+  async function EnterGame(e) {
+      e.preventDefault();
+      await addPlayer(localStorage.getItem('nickname'), localStorage.getItem('avatar'), roomId, isAdmin);
     navigate('/game');
-  };
+  }
 
   const urlFieldRef = useRef(null);
 

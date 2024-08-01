@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public required string Name { get; set; }
-        public required int AvatarId { get; set; }
+        public required string AvatarId { get; set; }
         public required string RoomId { get; set; }
         public required int Points { get; set; }
         public required bool IsAdmin { get; set; }
