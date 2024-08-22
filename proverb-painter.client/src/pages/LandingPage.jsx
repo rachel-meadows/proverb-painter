@@ -7,6 +7,31 @@ import '../assets/LandingPage.css';
 function App() {
   const navigate = useNavigate();
 
+  var regenerateAvatarButton = document.querySelector(
+    '.landingPage-regenerateAvatar'
+  );
+  regenerateAvatarButton?.addEventListener('click', ChangeAvatar);
+
+  function ChangeAvatar(e) {
+    e.preventDefault();
+    const avatar = document.querySelector('.common-avatar');
+
+    const avatars = [
+      '/avatars/Avatar1.jpeg',
+      '/avatars/Avatar2.jpeg',
+      '/avatars/Avatar3.jpeg',
+      '/avatars/Avatar4.jpeg',
+      '/avatars/Avatar5.jpeg',
+      '/avatars/Avatar6.jpeg',
+    ];
+
+    const randomIndex = Math.floor(Math.random() * avatars.length);
+    const randomImage = avatars[randomIndex];
+
+    localStorage.setItem('avatar', randomImage);
+    if (avatar) avatar.style.backgroundImage = `url('${randomImage}')`;
+  }
+
   useEffect(() => {
     const checkHealth = async () => {
       try {
@@ -68,32 +93,6 @@ function App() {
 
 function main() {
   document.getElementById('nickname');
-
-  ChangeAvatar();
-
-  var regenerateAvatarButton = document.querySelector('.regenerateAvatar');
-  if (regenerateAvatarButton) {
-    regenerateAvatarButton.addEventListener('click', ChangeAvatar);
-  }
-}
-
-function ChangeAvatar() {
-  const avatar = document.querySelector('.avatar');
-
-  const avatars = [
-    '/avatars/Avatar1.jpeg',
-    '/avatars/Avatar2.jpeg',
-    '/avatars/Avatar3.jpeg',
-    '/avatars/Avatar4.jpeg',
-    '/avatars/Avatar5.jpeg',
-    '/avatars/Avatar6.jpeg',
-  ];
-
-  const randomIndex = Math.floor(Math.random() * avatars.length);
-  const randomImage = avatars[randomIndex];
-
-  localStorage.setItem('avatar', randomImage);
-  if (avatar) avatar.style.backgroundImage = `url('${randomImage}')`;
 }
 
 document.addEventListener('DOMContentLoaded', main);

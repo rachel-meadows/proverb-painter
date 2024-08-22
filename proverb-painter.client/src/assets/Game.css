@@ -18,8 +18,8 @@
 
 .game-leftThird {
     background-color: rgba(0, 0, 0, 0.9);
-    height: 100vh;
-    padding: 0px;
+    height: 100%;
+    padding: 0px 0px 100px 0px;
     margin-right: 10px;
 }
 
