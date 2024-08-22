@@ -139,3 +139,12 @@
 .game-liked {
     color: red;
 }
+
+.crown {
+    position: absolute;
+    top: -15px;
+    left: 20%;
+    transform: translateX(-60%) translateY(10%) rotate(325deg);
+    width: 30px;
+    height: 30px;
+  }

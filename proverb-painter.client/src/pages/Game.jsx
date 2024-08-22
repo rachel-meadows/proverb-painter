@@ -1,18 +1,38 @@
 import { useRef, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import ProverbBox from '../components/ProverbBox';
+import PlayerInfo from '../components/PlayerInfo';
+import { getPlayersByRoom } from '../services/roomService';
 import '../assets/Common.css';
 import '../assets/Game.css';
 
 function Game() {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const roomId = searchParams.get('id');
+
   const canvasRef = useRef(null);
   const [context, setContext] = useState(null);
   const [lastMousePosition, setLastMousePos] = useState({ x: 0, y: 0 });
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [toolType, setToolType] = useState('draw');
   const [guesses, setGuesses] = useState([]);
+  const [playerList, setPlayerList] = useState([]);
   const [newGuess, setNewGuess] = useState('');
 
   useEffect(() => {
+    // Get players in the room
+    const getRoomData = async () => {
+      try {
+        const data = await getPlayersByRoom(roomId);
+        setPlayerList(data);
+      } catch (error) {
+        console.error('Error fetching room list:', error);
+      }
+    };
+    getRoomData();
+
+    // Set canvas defaults
     const canvas = canvasRef.current;
     if (canvas) {
       const context = canvas.getContext('2d');
@@ -91,14 +111,9 @@ function Game() {
         <div className="game-timer">51:03</div>
         <div className="game-playersList">
           <h1 className="centreText">Players:</h1>
-          <div className="common-horizontalFlex">
-            <div className="common-avatar smallAvatar"></div>
-            <p className="displayData">Bob (450)</p>
-          </div>
-          <div className="common-horizontalFlex">
-            <div className="common-avatar smallAvatar"></div>
-            <p className="displayData">Alice (600)</p>
-          </div>
+          {playerList?.map((player) => (
+            <PlayerInfo key={player.id} player={player} />
+          ))}
         </div>
       </div>
       <div className="game-column game-centreThird">

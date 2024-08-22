@@ -72,5 +72,22 @@ namespace proverb_painter.Server.Controllers
                 return StatusCode(500, "An error occurred while deleting the resource.");
             }
         }
+
+        [HttpGet("GetPlayersByRoom")]
+        public async Task<ActionResult<List<Player>>> GetPlayersByRoom([FromQuery] string id)
+        {
+            try
+            {
+                var players = await _context.Players
+                    .Where(p => p.RoomId == id)
+                    .ToListAsync();
+                return Ok(players);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+                return StatusCode(500, "An error occurred while retrieving the players.");
+            }
+        }
     }
 }

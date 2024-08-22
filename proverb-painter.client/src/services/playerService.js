@@ -1,13 +1,13 @@
 const API_URL = 'http://localhost:5025/api/player';
 
 export const addPlayer = async (userName, avatarUrl, roomId, isAdmin) => {
-    const player = {
-        Name: userName,
-        AvatarId: avatarUrl,
-        RoomId: roomId,
-        Points: 0,
-        IsAdmin: isAdmin
-    };
+  const player = {
+    Name: userName,
+    AvatarId: avatarUrl,
+    RoomId: roomId,
+    Points: 0,
+    IsAdmin: isAdmin,
+  };
 
   const response = await fetch(`${API_URL}/CreatePlayer`, {
     method: 'POST',

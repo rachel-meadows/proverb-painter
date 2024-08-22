@@ -9,16 +9,21 @@ function Lobby() {
 
   const userName = useState(localStorage.getItem('nickname') || 'Loading...');
   const avatarImg = useState(localStorage.getItem('avatar') || '');
-  const roomId = "1"; // Todo
+  const roomId = '1'; // Todo
   const isAdmin = true; // Todo
 
   const avatar = document.querySelector('.common-avatar');
   avatar.style.backgroundImage = `url('../${avatarImg}')`;
 
   async function EnterGame(e) {
-      e.preventDefault();
-      await addPlayer(localStorage.getItem('nickname'), localStorage.getItem('avatar'), roomId, isAdmin);
-    navigate('/game');
+    e.preventDefault();
+    await addPlayer(
+      localStorage.getItem('nickname'),
+      localStorage.getItem('avatar'),
+      roomId,
+      isAdmin
+    );
+    navigate(`/game?id=${roomId}`);
   }
 
   const urlFieldRef = useRef(null);
